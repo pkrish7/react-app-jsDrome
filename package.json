@@ -18,8 +18,17 @@
   },
   "homepage": "https://github.com/pkrish7/jsdrome#readme",
   "devDependencies": {
+    "@commitlint/cli": "^8.3.4",
+    "@commitlint/config-conventional": "^8.3.4",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.17.0"
+    "eslint-plugin-react": "^7.17.0",
+    "husky": "^3.1.0"
+  },
+"husky": {
+  "hooks": {
+    "pre-commit": "npm run clean && npm run lint",
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
   }
+}
 }
