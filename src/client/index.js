@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+/*eslint-disable no-magic-numbers */
+import React from 'react';
 import { render } from 'react-dom';
 
 class CounterApp extends React.Component {
