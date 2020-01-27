@@ -1,0 +1,155 @@
+[debug] [2020-01-27T21:13:30.716Z] ----------------------------------------------------------------------
+[debug] [2020-01-27T21:13:30.718Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-01-27T21:13:30.718Z] CLI Version:   7.12.1
+[debug] [2020-01-27T21:13:30.718Z] Platform:      darwin
+[debug] [2020-01-27T21:13:30.718Z] Node Version:  v12.14.0
+[debug] [2020-01-27T21:13:30.719Z] Time:          Mon Jan 27 2020 21:13:30 GMT+0000 (Greenwich Mean Time)
+[debug] [2020-01-27T21:13:30.719Z] ----------------------------------------------------------------------
+[debug] [2020-01-27T21:13:30.719Z] 
+[debug] [2020-01-27T21:13:30.728Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-27T21:13:30.728Z] > authorizing via signed-in user
+[debug] [2020-01-27T21:13:30.728Z] [iam] checking project pkrish1 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-01-27T21:13:30.730Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/pkrish1:testIamPermissions  
+
+[debug] [2020-01-27T21:13:32.275Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:13:32.277Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/pkrish1  
+ 
+[debug] [2020-01-27T21:13:32.752Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'pkrish1'...
+[info] 
+[info] i  deploying functions, hosting
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script.
+[debug] [2020-01-27T21:13:36.765Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "firebase-functions-test": "^0.1.6"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2020-01-27T21:13:36.766Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/pkrish1/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2020-01-27T21:13:36.767Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/pkrish1/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2020-01-27T21:13:37.273Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:13:38.685Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2020-01-27T21:13:38.686Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/pkrish1/adminSdkConfig  
+ 
+[debug] [2020-01-27T21:13:39.113Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:13:39.115Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/pkrish1/versions  
+
+[debug] [2020-01-27T21:13:41.169Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2020-01-27T21:13:41.171Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/pkrish1/configs  
+ 
+[debug] [2020-01-27T21:13:41.658Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (38.98 KB) for uploading
+[debug] [2020-01-27T21:13:41.932Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/pkrish1/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2020-01-27T21:13:43.009Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:13:43.010Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-750f8d9c-4c57-4e97-920a-2c561d0d2c73/0efddfce-fd56-4d7d-ae0f-4897f6d07c2c.zip?GoogleAccessId=service-446137950595@gcf-admin-robot.iam.gserviceaccount.com&Expires=1580161422&Signature=F3QnhGsRE1Hg1dWxMTOH6fbk4njfPwWmcke6Tu6byKkxLjN5mtaFGtxJ2vgrt%2B%2B%2FVeL5rJ%2FFZ391JAEPoYudHyn1m1LLl9gSp925sbzFu0r4AD0Z2vmpx7VyuAk1jcHz1Yed0EIIHS3bTC%2FOF4y4NfjMr03DyIzj8SeD4NhblCO6rGbMPBg5I4lU2ni28QIXY3E4zMBEFmcZumYCh6EOwYA6aeTrZfga4B2pBc9d5zleSwKlzaL8naS87OvhQ4oo%2B48%2FH8OzeN3tpN95Vd5rhs88ImhOwVWh3h71wgeNUP8vQmt5ANvGtyXQ3eeNGR2w09Qhz6jAonSXJ8Byo2V8FQ%3D%3D  
+ <request body omitted>
+[debug] [2020-01-27T21:13:44.000Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[info] i  hosting[pkrish1]: beginning deploy...
+[info] i  hosting[pkrish1]: found 3 files in _dist
+[debug] [2020-01-27T21:13:44.009Z] [hosting] hash cache [X2Rpc3Q] stored for 3 files
+[debug] [2020-01-27T21:13:44.009Z] [hosting][hash queue][FINAL]
+[debug] [2020-01-27T21:13:44.009Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/pkrish1/versions/4b4fb9ac0a3cc983:populateFiles  
+ <request body omitted>
+[debug] [2020-01-27T21:13:45.957Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:13:45.958Z] [hosting][populate queue][FINAL]
+[debug] [2020-01-27T21:13:45.958Z] [hosting] uploads queued: 0
+[debug] [2020-01-27T21:13:45.958Z] [hosting][upload queue][FINAL]
+[info] ✔  hosting[pkrish1]: file upload complete
+[debug] [2020-01-27T21:13:45.959Z] [hosting] deploy completed after 1958ms
+[debug] [2020-01-27T21:13:46.187Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/pkrish1/locations/-/functions  
+ 
+[debug] [2020-01-27T21:13:47.055Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating Node.js 8 function myExpressApp(us-central1)...
+[debug] [2020-01-27T21:13:47.058Z] Trigger is:  {"httpsTrigger":{}}
+[debug] [2020-01-27T21:13:47.059Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/pkrish1/services/cloudscheduler.googleapis.com  
+ 
+[debug] [2020-01-27T21:13:48.816Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:13:48.817Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/pkrish1/locations/us-central1/functions/myExpressApp {"updateMask":"sourceUploadUrl,name,labels,runtime,availableMemoryMb,timeout,httpsTrigger"} 
+
+[debug] [2020-01-27T21:13:49.445Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:13:49.447Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/pkrish1/locations/-/functions  
+ 
+[debug] [2020-01-27T21:13:50.271Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:13:50.272Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:13:51.007Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:13:53.013Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:13:53.452Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:13:55.455Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:13:55.877Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:13:57.881Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:13:58.335Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:14:00.341Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:14:01.071Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:14:03.073Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:14:03.522Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:14:05.524Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:14:06.240Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:14:08.245Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:14:08.935Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:14:10.939Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:14:11.361Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:14:13.366Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:14:13.810Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:14:15.815Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:14:16.239Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:14:18.244Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:14:18.967Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:14:20.968Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:14:21.695Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:14:23.695Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:14:24.148Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:14:26.154Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:14:26.876Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:14:28.878Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:14:29.301Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:14:31.305Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:14:32.038Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T21:14:34.042Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cGtyaXNoMS91cy1jZW50cmFsMS9teUV4cHJlc3NBcHAvVTUweFBaYllQcWM  
+ 
+[debug] [2020-01-27T21:14:34.763Z] <<< HTTP RESPONSE 200
